@@ -20,26 +20,31 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"commuter95.github.io","root":"/","images":"/images","scheme":"Mist","version":"8.6.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="記錄我平凡無奇的打工生活">
-<meta property="og:type" content="website">
-<meta property="og:title" content="打工人，打雜記">
-<meta property="og:url" content="https://commuter95.github.io/index.html">
+<meta name="description" content="12let a &#x3D; (1, 2);console.log(a); 請問上述程式碼會印出什麼呢？答案是2。不知道是否跟你心目中想像的結果一樣嗎？ 逗號運算子從MDN可以查到JavaScript對於逗號的定義：  The comma operator evaluates each of its operands (from left to right) and returns the value of">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《JavaScript》不小心踩到的陷阱篇（一）——我以為的Tuple其實是運算">
+<meta property="og:url" content="https://commuter95.github.io/2021/07/11/%E3%80%8AJavaScript%E3%80%8B%E4%B8%8D%E5%B0%8F%E5%BF%83%E8%B8%A9%E5%88%B0%E7%9A%84%E9%99%B7%E9%98%B1%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%E6%88%91%E4%BB%A5%E7%82%BA%E7%9A%84Tuple%E5%85%B6%E5%AF%A6%E6%98%AF%E9%81%8B%E7%AE%97/index.html">
 <meta property="og:site_name" content="打工人，打雜記">
-<meta property="og:description" content="記錄我平凡無奇的打工生活">
+<meta property="og:description" content="12let a &#x3D; (1, 2);console.log(a); 請問上述程式碼會印出什麼呢？答案是2。不知道是否跟你心目中想像的結果一樣嗎？ 逗號運算子從MDN可以查到JavaScript對於逗號的定義：  The comma operator evaluates each of its operands (from left to right) and returns the value of">
 <meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://images.unsplash.com/photo-1591522811280-a8759970b03f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80">
+<meta property="article:published_time" content="2021-07-11T12:33:38.000Z">
+<meta property="article:modified_time" content="2021-07-11T14:28:56.077Z">
 <meta property="article:author" content="Nina Weng">
-<meta property="article:tag" content="Javascript">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="JS">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1591522811280-a8759970b03f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80">
 
 
-<link rel="canonical" href="https://commuter95.github.io/">
+<link rel="canonical" href="https://commuter95.github.io/2021/07/11/%E3%80%8AJavaScript%E3%80%8B%E4%B8%8D%E5%B0%8F%E5%BF%83%E8%B8%A9%E5%88%B0%E7%9A%84%E9%99%B7%E9%98%B1%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%E6%88%91%E4%BB%A5%E7%82%BA%E7%9A%84Tuple%E5%85%B6%E5%AF%A6%E6%98%AF%E9%81%8B%E7%AE%97/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"zh-TW","comments":"","permalink":"","path":"index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://commuter95.github.io/2021/07/11/%E3%80%8AJavaScript%E3%80%8B%E4%B8%8D%E5%B0%8F%E5%BF%83%E8%B8%A9%E5%88%B0%E7%9A%84%E9%99%B7%E9%98%B1%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%E6%88%91%E4%BB%A5%E7%82%BA%E7%9A%84Tuple%E5%85%B6%E5%AF%A6%E6%98%AF%E9%81%8B%E7%AE%97/","path":"2021/07/11/《JavaScript》不小心踩到的陷阱篇（一）——我以為的Tuple其實是運算/","title":"《JavaScript》不小心踩到的陷阱篇（一）——我以為的Tuple其實是運算"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>打工人，打雜記</title>
+<title>《JavaScript》不小心踩到的陷阱篇（一）——我以為的Tuple其實是運算 | 打工人，打雜記</title>
   
 
 
@@ -106,7 +111,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目錄
@@ -119,6 +124,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%80%97%E8%99%9F%E9%81%8B%E7%AE%97%E5%AD%90"><span class="nav-number">1.</span> <span class="nav-text">逗號運算子</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B0%8F%E8%A9%A6%E8%BA%AB%E6%89%8B"><span class="nav-number">2.</span> <span class="nav-text">小試身手</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -175,16 +181,17 @@
 </noscript>
 
 
-    <div class="main-inner index posts-expand">
+    <div class="main-inner post posts-expand">
 
-    
+
+  
 
 
 <div class="post-block">
   
   
 
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://commuter95.github.io/2021/07/11/%E3%80%8AJavaScript%E3%80%8B%E4%B8%8D%E5%B0%8F%E5%BF%83%E8%B8%A9%E5%88%B0%E7%9A%84%E9%99%B7%E9%98%B1%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%E6%88%91%E4%BB%A5%E7%82%BA%E7%9A%84Tuple%E5%85%B6%E5%AF%A6%E6%98%AF%E9%81%8B%E7%AE%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -197,9 +204,9 @@
       <meta itemprop="name" content="打工人，打雜記">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/07/11/%E3%80%8AJavaScript%E3%80%8B%E4%B8%8D%E5%B0%8F%E5%BF%83%E8%B8%A9%E5%88%B0%E7%9A%84%E9%99%B7%E9%98%B1%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%E6%88%91%E4%BB%A5%E7%82%BA%E7%9A%84Tuple%E5%85%B6%E5%AF%A6%E6%98%AF%E9%81%8B%E7%AE%97/" class="post-title-link" itemprop="url">《JavaScript》不小心踩到的陷阱篇（一）——我以為的Tuple其實是運算</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          《JavaScript》不小心踩到的陷阱篇（一）——我以為的Tuple其實是運算
+        </h1>
 
         <div class="post-meta-container">
           <div class="post-meta">
@@ -232,7 +239,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = (<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br></pre></td></tr></table></figure>
+        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = (<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br></pre></td></tr></table></figure>
 <p>請問上述程式碼會印出什麼呢？<br><img src="https://images.unsplash.com/photo-1591522811280-a8759970b03f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="思考"><br>答案是<code>2</code>。不知道是否跟你心目中想像的結果一樣嗎？</p>
 <h1 id="逗號運算子"><a href="#逗號運算子" class="headerlink" title="逗號運算子"></a>逗號運算子</h1><p>從<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Comma_Operator">MDN</a>可以查到JavaScript對於逗號的定義：</p>
 <blockquote>
@@ -244,7 +251,6 @@
 <p>上述程式碼會印出什麼呢？</p>
 <p>答案是<code>7</code>。<br>解說：一開始<code>a=1</code>，第二行由左至右運算，<code>a++</code>可以視<code>a+=1</code>，所以此時<code>a=2</code>。接下來計算<code>a-10</code>，但此結果並沒有回傳值，只是個純運算。最後計算<code>a+5</code>，得到結果為<code>7</code>。三個運算元計算完畢，回傳最後一個運算元的值給<code>b</code>。最終印出<code>b</code>就是<code>7</code>啦。</p>
 
-      
     </div>
 
     
@@ -252,11 +258,17 @@
     
 
     <footer class="post-footer">
-        <div class="post-eof"></div>
-      
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+              <a href="/tags/JS/" rel="tag"># JS</a>
+          </div>
+
+        
+
     </footer>
   </article>
 </div>
+
 
 
 
