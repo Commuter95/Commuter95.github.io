@@ -2024,6 +2024,10 @@ pre code {
   color: #d63384;
   background: #fff;
 }
+.post-body image {
+  width: 100%;
+  height: auto;
+}
 .post-gallery {
   display: flex;
   min-height: 200px;
@@ -2739,7 +2743,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #ff673c;
+  background: #f7f;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
