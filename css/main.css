@@ -2028,6 +2028,13 @@ pre code {
   width: 100%;
   height: auto;
 }
+.post-body figure {
+  color: #ccc;
+  font-size: 0.875em;
+  font-weight: normal;
+  line-height: 0.6;
+  text-align: center;
+}
 .post-gallery {
   display: flex;
   min-height: 200px;
@@ -2743,7 +2750,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #f7f;
+  background: #f75df4;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
