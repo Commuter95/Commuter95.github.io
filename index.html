@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"commuter95.github.io","root":"/","images":"/images","scheme":"Mist","version":"8.6.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"commuter95.github.io","root":"/","images":"/images","scheme":"Mist","version":"8.6.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
 <meta name="description" content="記錄我平凡無奇的打工生活">
 <meta property="og:type" content="website">
 <meta property="og:title" content="打工人，打雜記">
@@ -169,6 +169,7 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 <noscript>
   <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
@@ -210,7 +211,7 @@
       <span class="post-meta-item-text">發表於</span>
       
 
-      <time title="創建時間：2021-07-12 13:50:20 / 修改時間：15:21:06" itemprop="dateCreated datePublished" datetime="2021-07-12T13:50:20+08:00">2021-07-12</time>
+      <time title="創建時間：2021-07-12 13:50:20 / 修改時間：18:26:52" itemprop="dateCreated datePublished" datetime="2021-07-12T13:50:20+08:00">2021-07-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -233,16 +234,16 @@
     
     <div class="post-body" itemprop="articleBody">
           <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = (<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br></pre></td></tr></table></figure>
-<p>請問上述程式碼會印出什麼呢？<br><img src="https://images.unsplash.com/photo-1591522811280-a8759970b03f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="思考"><br>答案是<code>2</code>。不知道是否跟你心目中想像的結果一樣嗎？</p>
+<p>請問上述程式碼會印出什麼呢？<br><img src="https://images.unsplash.com/photo-1591522811280-a8759970b03f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="思考"><br>答案是 <mark class="label primary">2</mark> 。不知道是否跟你心目中想像的結果一樣嗎？</p>
 <h1 id="逗號運算子"><a href="#逗號運算子" class="headerlink" title="逗號運算子"></a>逗號運算子</h1><p>從<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Comma_Operator">MDN</a>可以查到JavaScript對於逗號的定義：</p>
 <blockquote>
 <p>The comma operator evaluates each of its operands (from left to right) and returns the value of the last operand.<br><cite><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Comma_Operator">MDN</a></cite></p>
 </blockquote>
-<p>在JavaScript中的逗號其實是<strong>運算子</strong>，他會由左至右計算每一個運算元的值，並<strong>回傳最後一個運算元計算後的值</strong>。所以，並不像其他語言（例如：C#），小括號裡面放個逗號表示Tuple，可別搞混啦～</p>
+<p>在JavaScript中的逗號其實是<strong>運算子</strong>，他會<strong>由左至右計算每一個運算元的值，並<mark class="label ">回傳最後一個運算元計算後的值</mark></strong> 。所以，並不像其他語言（例如：C#），小括號裡面放個逗號表示Tuple，可別搞混啦～</p>
 <h1 id="小試身手"><a href="#小試身手" class="headerlink" title="小試身手"></a>小試身手</h1><p>來個小題目確定自己搞懂了吧～</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> b = (a++, a-<span class="number">10</span>, a+<span class="number">5</span>);</span><br><span class="line"><span class="built_in">console</span>.log(b);</span><br></pre></td></tr></table></figure>
 <p>上述程式碼會印出什麼呢？</p>
-<p>答案是<code>7</code>。<br>解說：一開始<code>a=1</code>，第二行由左至右運算，<code>a++</code>可以視<code>a+=1</code>，所以此時<code>a=2</code>。接下來計算<code>a-10</code>，但此結果並沒有回傳值，只是個純運算。最後計算<code>a+5</code>，得到結果為<code>7</code>。三個運算元計算完畢，回傳最後一個運算元的值給<code>b</code>。最終印出<code>b</code>就是<code>7</code>啦。</p>
+<p>答案是 <mark class="label primary">7</mark>。<br>解說：一開始<code>a=1</code>，第二行由左至右運算，<code>a++</code>可以視為<code>a+=1</code>，所以此時<code>a=2</code>。接下來計算<code>a-10</code>，但此結果並沒有回傳值，只是純運算。最後計算<code>a+5</code>，得到結果為<code>7</code>。三個運算元計算完畢，回傳最後一個運算元的值給<code>b</code>。最終印出<code>b</code>就是<code>7</code>啦。</p>
 
       
     </div>
