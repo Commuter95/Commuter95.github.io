@@ -17,6 +17,7 @@ document.addEventListener('page:loaded', () => {
     // `disqus_config` should be a global variable
     // See https://help.disqus.com/en/articles/1717084-javascript-configuration-variables
     window.disqus_config = function() {
+      this.language = 'zh_TW';
       this.page.url = CONFIG.page.permalink;
       this.page.identifier = CONFIG.page.path;
       this.page.title = CONFIG.page.title;
