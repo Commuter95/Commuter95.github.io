@@ -2024,11 +2024,14 @@ pre code {
   color: #d63384;
   background: #fff;
 }
+.post-body .katex {
+  color: #336fd6;
+}
 .post-body image {
   width: 100%;
   height: auto;
 }
-.post-body figure {
+.post-body figcaption {
   color: #ccc;
   font-size: 0.875em;
   font-weight: normal;
@@ -2750,7 +2753,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #bf9a5b;
+  background: #df12d5;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
