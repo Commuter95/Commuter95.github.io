@@ -219,10 +219,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">發表於</span>
-      
 
-      <time title="創建時間：2021-07-25 19:11:53 / 修改時間：19:11:54" itemprop="dateCreated datePublished" datetime="2021-07-25T19:11:53+08:00">2021-07-25</time>
+      <time title="創建時間：2021-07-25 19:11:53" itemprop="dateCreated datePublished" datetime="2021-07-25T19:11:53+08:00">2021-07-25</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新於</span>
+        <time title="修改時間：2021-07-27 18:45:22" itemprop="dateModified" datetime="2021-07-27T18:45:22+08:00">2021-07-27</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -244,9 +250,9 @@
     
     <div class="post-body" itemprop="articleBody">
           <h1 id="two-sum"><a class="markdownIt-Anchor" href="#two-sum"></a> Two Sum</h1>
-<p><strong>難易度</strong>：<mark class="label ">Easy</mark><br />
-<strong>種類</strong>：Array<br />
-<strong>LeetCode連結</strong>：<a target="_blank" rel="noopener" href="https://leetcode.com/problems/two-sum/">https://leetcode.com/problems/two-sum/</a></p>
+<p><strong>難易度</strong>： <mark class="label ">Easy</mark><br />
+<strong>種類</strong>： Array<br />
+<strong>LeetCode連結</strong>： <a target="_blank" rel="noopener" href="https://leetcode.com/problems/two-sum/">https://leetcode.com/problems/two-sum/</a></p>
 <h2 id="題目"><a class="markdownIt-Anchor" href="#題目"></a> 題目</h2>
 <p>Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.</p>
 <p>You may assume that each input would have exactly one solution, and you may not use the same element twice.</p>
@@ -267,13 +273,13 @@
 <p>先來複習一下<code>HashMap</code>在<code>JavaScript</code>的寫法：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> hashMap = &#123;&#125;;</span><br><span class="line">hashMap[<span class="string">&#x27;a&#x27;</span>] = <span class="string">&#x27;apple&#x27;</span>;</span><br><span class="line">hashMap[<span class="string">&#x27;b&#x27;</span>] = <span class="string">&#x27;banana&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> key <span class="keyword">in</span> hashMap) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;key&#125;</span>: <span class="subst">$&#123;hashMap[key]&#125;</span>`</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// output:</span></span><br><span class="line"><span class="comment">// a: apple</span></span><br><span class="line"><span class="comment">// b: banana</span></span><br></pre></td></tr></table></figure>
 <p>再來定義一下名詞：</p>
-<img src="/%E3%80%8ALeetCode%E7%AD%86%E8%A8%98%E3%80%8BTwoSum/definition-1x.png" class="" title="definition" alt="definition">
+<img src="/%E3%80%8ALeetCode%E7%AD%86%E8%A8%98%E3%80%8BTwoSum/definition-1x.webp" class="" title="definition" alt="definition">
 <p>從數組<code>nums</code>中取出的<strong>被加數</strong><code>num</code>，加上<strong>加數</strong><code>addend</code>就可以等於<strong>目標值</strong><code>target</code>。<br />
 可以得知<code>addend = target - num</code>。<br />
 然後舉個例子：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> nums = [<span class="number">2</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">9</span>];</span><br><span class="line"><span class="keyword">let</span> target = <span class="number">9</span>;</span><br></pre></td></tr></table></figure>
 <p>我們可以用一個<code>for</code>迴圈遍歷<code>nums</code>，來建一個<code>addend</code>的對應表(Mapping)<code>toAddend</code>。其中對應表的<code>key</code>為該num缺的加數<code>addend</code>，<code>value</code>為該num的<code>index</code>。如下圖所示：</p>
-<img src="/%E3%80%8ALeetCode%E7%AD%86%E8%A8%98%E3%80%8BTwoSum/addend-1x.png" class="" title="addend" alt="addend">
+<img src="/%E3%80%8ALeetCode%E7%AD%86%E8%A8%98%E3%80%8BTwoSum/addend-1x.webp" class="" title="addend" alt="addend">
 <p>當然，若解已出現，我們不需要跑完整個<code>for</code>迴圈，可以提早回傳答案，也就是所謂的<code>early stopping</code>。所以在迴圈中，針對目前被加數<code>num</code>所需的加數<code>addend</code>存在的話，我們就提早回傳答案。</p>
 <h4 id="typescript-程式碼"><a class="markdownIt-Anchor" href="#typescript-程式碼"></a> TypeScript 程式碼</h4>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">twoSum</span>(<span class="params">nums: <span class="built_in">number</span>[], target: <span class="built_in">number</span></span>): <span class="title">number</span>[] </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> toAddend: Record&lt;<span class="built_in">number</span>, <span class="built_in">number</span>&gt; = &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">const</span> num: <span class="built_in">number</span> = nums[i];</span><br><span class="line">        <span class="keyword">if</span>(toAddend[num] != <span class="literal">undefined</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> [toAddend[num], i];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">const</span> addend: <span class="built_in">number</span> = target - num;</span><br><span class="line">        toAddend[addend] = i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> [];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
@@ -357,7 +363,7 @@ Memory Usage: <strong>41.2 MB</strong>, less than <strong>61.26%</strong> of Typ
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = (<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br></pre></td></tr></table></figure>
 <p>請問上述程式碼會印出什麼呢？</p>
 <figure>
-    <img src="/%E3%80%8AJavaScript%E3%80%8B%E4%B8%8D%E5%B0%8F%E5%BF%83%E8%B8%A9%E5%88%B0%E7%9A%84%E9%99%B7%E9%98%B1%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%E6%88%91%E4%BB%A5%E7%82%BA%E7%9A%84Tuple%E5%85%B6%E5%AF%A6%E6%98%AF%E9%81%8B%E7%AE%97/thinking.png" class="" title="think" alt="思考">
+    <img src="/%E3%80%8AJavaScript%E3%80%8B%E4%B8%8D%E5%B0%8F%E5%BF%83%E8%B8%A9%E5%88%B0%E7%9A%84%E9%99%B7%E9%98%B1%E7%AF%87%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%E6%88%91%E4%BB%A5%E7%82%BA%E7%9A%84Tuple%E5%85%B6%E5%AF%A6%E6%98%AF%E9%81%8B%E7%AE%97/thinking.webp" class="" title="think" alt="思考">
     <figcaption>
         <a rel="license external noopener" target="_blank" href="https://storyset.com/people">圖片來源</a>
     </figcaption>
