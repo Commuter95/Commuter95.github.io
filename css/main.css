@@ -2027,7 +2027,7 @@ pre code {
 .post-body .katex {
   color: #336fd6;
 }
-.post-body image {
+.post-body img {
   width: 100%;
   height: auto;
 }
@@ -2753,7 +2753,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #17ff18;
+  background: #86ff93;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
