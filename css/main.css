@@ -17,10 +17,10 @@
   --btn-default-hover-bg: transparent;
   --btn-default-hover-color: var(--link-hover-color);
   --btn-default-hover-border-color: var(--link-hover-color);
-  --highlight-background: #f0f0f0;
-  --highlight-foreground: #444;
-  --highlight-gutter-background: #dedede;
-  --highlight-gutter-foreground: #555;
+  --highlight-background: #fff;
+  --highlight-foreground: #000;
+  --highlight-gutter-background: #e5e5e5;
+  --highlight-gutter-foreground: #191919;
 }
 html {
   line-height: 1.15; /* 1 */
@@ -359,138 +359,90 @@ td {
   top: -5px;
   transform: rotate(-45deg);
 }
-/*!
-  Theme: Default
-  Description: Original highlight.js style
-  Author: (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
-  Maintainer: @highlightjs/core-team
-  Website: https://highlightjs.org/
-  License: see project LICENSE
-  Touched: 2021
-*/
-
 /*
-This is left on purpose making default.css the single file that can be lifted
-as-is from the repository directly without the need for a build step
 
-Typically this "required" baseline CSS is added by `makestuff.js` during build.
+Google Code style (c) Aahan Krish <geekpanth3r@gmail.com>
+
 */
-pre code.hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 1em;
-}
-
-code.hljs {
-  padding: 3px 5px;
-}
-/* end baseline CSS */
 
 .hljs {
-  background: #F0F0F0;
-  color: #444;
+  background: white;
+  color: black;
 }
 
-/* Base color: saturation 0; */
-
-.hljs-subst {
-  /* default */
+.hljs-comment,
+.hljs-quote {
+  color: #800;
 }
-
-/* purposely ignored */
-.hljs-formula,
-.hljs-attr,
-.hljs-property,
-.hljs-params {}
-
-.hljs-comment {
-  color: #888888;
-}
-.hljs-tag,
-.hljs-punctuation {
-  color: #444a;
-}
-
-.hljs-tag .hljs-name,
-.hljs-tag .hljs-attr {
-  color: #444;
-}
-
 
 .hljs-keyword,
-.hljs-attribute,
 .hljs-selector-tag,
-.hljs-meta .hljs-keyword,
-
-.hljs-doctag,
+.hljs-section,
+.hljs-title,
 .hljs-name {
-  font-weight: bold;
+  color: #008;
 }
 
+.hljs-variable,
+.hljs-template-variable {
+  color: #660;
+}
 
-/* User color: hue: 0 */
-
-.hljs-type,
 .hljs-string,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-regexp {
+  color: #080;
+}
+
+.hljs-literal,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-meta,
 .hljs-number,
-.hljs-selector-id,
-.hljs-selector-class,
-.hljs-quote,
-.hljs-template-tag,
-.hljs-deletion {
-  color: #880000;
+.hljs-link {
+  color: #066;
 }
 
 .hljs-title,
-.hljs-section {
-  color: #880000;
-  font-weight: bold;
-}
-
-.hljs-regexp,
-.hljs-symbol,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-link,
-.hljs-selector-attr,
-.hljs-operator,
-.hljs-selector-pseudo {
-  color: #BC6060;
-}
-
-/* Language color: hue: 90; */
-
-.hljs-literal {
-  color: #78A960;
-}
-
+.hljs-doctag,
+.hljs-type,
+.hljs-attr,
 .hljs-built_in,
-.hljs-bullet,
-.hljs-code,
-.hljs-addition {
-  color: #397300;
+.hljs-params {
+  color: #606;
 }
 
-
-/* Meta color: hue: 200 */
-
-.hljs-meta {
-  color: #1f7199;
+.hljs-attribute,
+.hljs-subst {
+  color: #000;
 }
 
-.hljs-meta .hljs-string {
-  color: #4d99bf;
-}
-
-
-/* Misc effects */
-
-.hljs-emphasis {
+.hljs-formula {
+  background-color: #eee;
   font-style: italic;
 }
 
+.hljs-selector-id,
+.hljs-selector-class {
+  color: #9B703F
+}
+
+.hljs-addition {
+  background-color: #baeeba;
+}
+
+.hljs-deletion {
+  background-color: #ffc8bd;
+}
+
+.hljs-doctag,
 .hljs-strong {
   font-weight: bold;
+}
+
+.hljs-emphasis {
+  font-style: italic;
 }
 
 .highlight:hover .copy-btn,
@@ -2787,7 +2739,7 @@ hr {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #033d2f;
+  background: #39ff3b;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
