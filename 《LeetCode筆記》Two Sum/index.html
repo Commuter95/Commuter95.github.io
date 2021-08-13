@@ -20,17 +20,17 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"commuter95.github.io","root":"/","images":"/images","scheme":"Mist","version":"8.6.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":true,"nav":null,"activeClass":"disqus"},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="Two Sum 難易度： Easy 種類： Array LeetCode連結： https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;two-sum&#x2F;  題目 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to ta">
+<meta name="description" content="1. Two Sum 難易度： Easy 種類： Array LeetCode連結： https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;two-sum&#x2F;  題目 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《LeetCode筆記》Two Sum">
 <meta property="og:url" content="https://commuter95.github.io/%E3%80%8ALeetCode%E7%AD%86%E8%A8%98%E3%80%8BTwo%20Sum/index.html">
 <meta property="og:site_name" content="打工人，打雜記">
-<meta property="og:description" content="Two Sum 難易度： Easy 種類： Array LeetCode連結： https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;two-sum&#x2F;  題目 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to ta">
+<meta property="og:description" content="1. Two Sum 難易度： Easy 種類： Array LeetCode連結： https:&#x2F;&#x2F;leetcode.com&#x2F;problems&#x2F;two-sum&#x2F;  題目 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://commuter95.github.io/%E3%80%8ALeetCode%E7%AD%86%E8%A8%98%E3%80%8BTwo%20Sum/definition-1x.webp">
 <meta property="og:image" content="https://commuter95.github.io/%E3%80%8ALeetCode%E7%AD%86%E8%A8%98%E3%80%8BTwo%20Sum/addend-1x.webp">
 <meta property="article:published_time" content="2021-07-25T11:11:53.000Z">
-<meta property="article:modified_time" content="2021-08-07T07:29:31.940Z">
+<meta property="article:modified_time" content="2021-08-11T10:10:55.860Z">
 <meta property="article:author" content="Nina Weng">
 <meta property="article:tag" content="LeetCode">
 <meta property="article:tag" content="Array">
@@ -130,7 +130,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#two-sum"><span class="nav-number">1.</span> <span class="nav-text"> Two Sum</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE"><span class="nav-number">1.1.</span> <span class="nav-text"> 題目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%9E%90"><span class="nav-number">1.2.</span> <span class="nav-text"> 解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE%E8%A7%A3%E6%9E%90"><span class="nav-number">1.2.1.</span> <span class="nav-text"> 題目解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%E6%9A%B4%E5%8A%9B%E8%A7%A3"><span class="nav-number">1.2.2.</span> <span class="nav-text"> 解法一：暴力解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8Chashmap"><span class="nav-number">1.2.3.</span> <span class="nav-text"> 解法二：HashMap</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#typescript-%E7%A8%8B%E5%BC%8F%E7%A2%BC"><span class="nav-number">1.2.3.1.</span> <span class="nav-text"> TypeScript 程式碼</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%88%E8%83%BD"><span class="nav-number">1.2.3.2.</span> <span class="nav-text"> 效能</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-two-sum"><span class="nav-number">1.</span> <span class="nav-text"> 1. Two Sum</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE"><span class="nav-number">1.1.</span> <span class="nav-text"> 題目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%9E%90"><span class="nav-number">1.2.</span> <span class="nav-text"> 解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE%E8%A7%A3%E6%9E%90"><span class="nav-number">1.2.1.</span> <span class="nav-text"> 題目解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%B8%80%E6%9A%B4%E5%8A%9B%E8%A7%A3"><span class="nav-number">1.2.2.</span> <span class="nav-text"> 解法一：暴力解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E4%BA%8Chashmap"><span class="nav-number">1.2.3.</span> <span class="nav-text"> 解法二：HashMap</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#typescript-%E7%A8%8B%E5%BC%8F%E7%A2%BC"><span class="nav-number">1.2.3.1.</span> <span class="nav-text"> TypeScript 程式碼</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%88%E8%83%BD"><span class="nav-number">1.2.3.2.</span> <span class="nav-text"> 效能</span></a></li></ol></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -230,7 +230,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新於</span>
-        <time title="修改時間：2021-08-07 15:29:31" itemprop="dateModified" datetime="2021-08-07T15:29:31+08:00">2021-08-07</time>
+        <time title="修改時間：2021-08-11 18:10:55" itemprop="dateModified" datetime="2021-08-11T18:10:55+08:00">2021-08-11</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -252,7 +252,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="two-sum"><a class="markdownIt-Anchor" href="#two-sum"></a> Two Sum</h1>
+        <h1 id="1-two-sum"><a class="markdownIt-Anchor" href="#1-two-sum"></a> 1. Two Sum</h1>
 <p><strong>難易度</strong>： <mark class="label ">Easy</mark><br />
 <strong>種類</strong>： Array<br />
 <strong>LeetCode連結</strong>： <a target="_blank" rel="noopener" href="https://leetcode.com/problems/two-sum/">https://leetcode.com/problems/two-sum/</a></p>
